@@ -1,0 +1,170 @@
+@import './_variables.scss';
+
+/* Light Theme */
+.todo-items {
+    &-container {
+        background-color: $white;
+        padding: $lg 23px;
+        width: 540px;
+        min-height: 64px;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        box-sizing: border-box;
+        border-bottom: 1px solid $light-theme-grayish-blue;
+        transition: $transition;
+
+        &:hover {
+            cursor: move;
+
+            .todo-items-delete {
+                display: block;
+            }
+        }
+
+        &.drag {
+            transform: scale(1.02);
+            outline: 1px solid $light-theme-grayish-blue;
+            border: none;
+            border-radius: $xs;
+            box-shadow: $box-shadow;
+        }
+    }
+
+    &-checkbox {
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        outline: 1px solid $light-theme-grayish-blue;
+        transition: $transition;
+        position: relative;
+
+        &:hover {
+            cursor: pointer;
+            outline: none;
+            background-image: $check-background;
+
+            // @Hack: Make the gradient outline
+            &::before {
+                content: "";
+                width: 23px;
+                height: 23px;
+                border-radius: 50px;
+                background-color: $white;
+                position: absolute;
+                top: 1px;
+                left: 1px;
+                display: block;
+            }
+        }
+
+        &.checked {
+            outline: none;
+            background-image: url('../assets/images/icon-check.svg'),$check-background;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &:hover {
+                &::before {
+                    content: "";
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &-content {
+        color: $light-theme-deep-dark-grayish-blue;
+        flex-grow: 1;
+        margin-top: 3px;
+        transition: $transition;
+        max-width: 400px;
+        overflow-wrap: break-word;
+
+        &.checked {
+            color: $light-theme-grayish-blue;
+            text-decoration: line-through;
+        }
+    }
+
+    &-delete {
+        display: none;
+        background-color: none;
+        background: url('../assets/images/icon-cross.svg') no-repeat center;
+        width: 18px;
+        height: 18px;
+        border: none;
+        transition: $transition;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+
+/* Dark Theme */
+.dark {
+    .todo-items {
+        &-container {
+            background-color: $dark-theme-desaturated-blue;
+            border-bottom: 1px solid $dark-theme-deep-dark-grayish-blue;
+        }
+    
+        &-checkbox {
+            outline: 1px solid $dark-theme-deep-dark-grayish-blue;
+    
+            &:hover {
+                // @Hack: Make the gradient outline
+                &::before {
+                    content: "";
+                    background-color: $dark-theme-desaturated-blue;
+                }
+            }
+        }
+    
+        &-content {
+            color: $dark-theme-light-grayish-blue;
+
+            &.checked {
+                color: $dark-theme-deep-dark-grayish-blue;
+            }
+        }
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .todo-items {
+        &-container {
+            padding: 14px $lg;
+            width: 328px;
+            min-height: 48px;
+            gap: 12px;
+        }
+
+        &-checkbox {
+            width: $lg;
+            height: $lg;
+
+            &:hover {
+                &::before {
+                    content: "";
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+
+        &-content {
+            margin-top: 2px;
+            font-size: 14px;
+            max-width: 230px;
+        }
+
+        &-delete {
+            width: 13px;
+            height: 13px;
+        }
+    }
+}

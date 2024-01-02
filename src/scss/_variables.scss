@@ -1,0 +1,39 @@
+
+// Colors
+$white: hsl(0, 0%, 100%);
+$bright-blue: hsl(220, 98%, 61%);
+$check-background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+$light-theme-light-gray: hsl(0, 0%, 98%);
+$light-theme-light-grayish-blue: hsl(236, 33%, 92%);
+$light-theme-grayish-blue: hsl(233, 11%, 84%);
+$light-theme-dark-grayish-blue: hsl(236, 9%, 61%);
+$light-theme-deep-dark-grayish-blue: hsl(235, 19%, 35%);
+
+$dark-theme-dark-blue: hsl(235, 21%, 11%);
+$dark-theme-desaturated-blue: hsl(235, 24%, 19%);
+$dark-theme-light-grayish-blue: hsl(234, 39%, 85%);
+$dark-theme-light-grayish-blue-hover: hsl(236, 33%, 92%);
+$dark-theme-dark-grayish-blue: hsl(234, 11%, 52%);
+$dark-theme-deep-dark-grayish-blue: hsl(233, 14%, 35%);
+$dark-theme-deeper-dark-grayish-blue: hsl(237, 14%, 26%);
+
+
+// Padding and Margin
+$xs: 5px;
+$sm: 10px;
+$md: 15px;
+$lg: 20px;
+$xlg: 35px;
+
+
+// Transition
+$transition: all .2s ease-in;
+
+
+// Box Shadow
+$box-shadow: 0 0px 35px 0 rgba(0,0,0,.1);
+
+
+// Font Weight
+$bold: 700;

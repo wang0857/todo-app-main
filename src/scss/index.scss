@@ -1,0 +1,41 @@
+/* Overall Setting */
+@import './_variables.scss';
+@import './_mixin.scss';
+
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+body {
+    background-color: $light-theme-light-gray;
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & > * {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 18px;
+    }
+
+    button {
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    input {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 18px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0px;
+    line-height: 0;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}

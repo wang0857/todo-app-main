@@ -1,0 +1,217 @@
+@import './_variables.scss';
+
+/* Light Theme */
+
+/* Header */
+header {
+    background: url('../assets/images/bg-desktop-light.jpg') no-repeat top center;
+    background-size: cover;
+    padding: 78px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100vw;
+}
+
+h1 {
+    color: $white;
+    letter-spacing: 17px;
+    font-size: 30px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 540px;
+    margin-bottom: 50px;
+}
+
+.toggle-theme {
+    border: none;
+    background-color: none;
+    background: url('../assets/images/icon-moon.svg') no-repeat center;
+    height: 28px;
+    width: 28px;
+    margin-top: -10px; // @Hack: For aligning the toggle button to the h1
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Todo List */
+.todo-list {
+    list-style: none;
+    
+    &-container {
+        background-color: $white;
+        border-radius: $xs;
+        box-shadow: $box-shadow;
+        margin-top: -54px;
+        margin-bottom: 52px;
+        width: 540px;
+        overflow: hidden;
+    }
+
+    &-footer {
+        color: $light-theme-dark-grayish-blue;
+        padding: $lg 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+
+        &-middle {
+            display: flex;
+            gap: $lg;
+            font-weight: $bold;
+
+            span {
+                transition: $transition;
+                
+                &:hover {
+                    cursor: pointer;
+                    color: $light-theme-deep-dark-grayish-blue;
+                }
+
+                &.active {
+                    color: $bright-blue;
+                }
+            }
+
+            &.mobile {
+                display: none;
+            }
+        }
+
+        &-right {
+            border: none;
+            background: none;
+            color: $light-theme-dark-grayish-blue;
+            font-size: 13px;
+
+            &:hover {
+                cursor: pointer;
+                color: $light-theme-deep-dark-grayish-blue;
+            }
+        }
+    }
+}
+
+.footer-text {
+    color: $light-theme-dark-grayish-blue;
+    font-size: $md;
+}
+
+
+/* Dark Theme */
+.dark {
+    header {
+        background: url('../assets/images/bg-desktop-dark.jpg') no-repeat top center;
+        background-size: cover;
+    }
+    
+    .toggle-theme {
+        background: url('../assets/images/icon-sun.svg') no-repeat center;
+    }
+    
+    /* Todo List */
+    .todo-list {
+        &-container {
+            background-color: $dark-theme-desaturated-blue;
+        }
+    
+        &-footer {
+            color: $dark-theme-dark-grayish-blue;
+    
+            &-middle {    
+                span {
+                    &:hover {
+                        color: $white;
+                    }
+                }
+
+                &.mobile {
+                    background-color: $dark-theme-desaturated-blue;
+                    color: $dark-theme-dark-grayish-blue;
+
+                    span {
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+    
+            &-right {
+                color: $dark-theme-dark-grayish-blue;
+    
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+    
+    .footer-text {
+        color: $dark-theme-dark-grayish-blue;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    /* Light theme */
+    header {
+        padding: 50px 0px 45px;
+    }
+
+    .header-container {
+        width: 328px;
+    }
+    
+    .todo-list {
+        &-container {
+            margin-top: -28px;
+            margin-bottom: 16px;
+            width: 328px;
+        }
+    
+        &-footer {
+            &-middle {
+                display: none;
+                
+                &.mobile {
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 42px;
+                    background-color: $white;
+                    border-radius: $xs;
+                    box-shadow: $box-shadow;
+                    color: $light-theme-dark-grayish-blue;
+                    padding: 16px 0px;
+                    width: 328px;
+                    font-size: 14px;
+
+                    span {
+                        margin-top: $xs;
+
+                        &:hover {
+                            color: $light-theme-deep-dark-grayish-blue;
+                        }
+        
+                        &.active {
+                            color: $bright-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

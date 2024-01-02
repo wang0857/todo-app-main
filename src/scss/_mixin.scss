@@ -1,0 +1,41 @@
+@mixin button($backgroundColor, $color, $shadowColor, $hoverBackgroundColor, $focusBorderColor) {
+    background-color: $backgroundColor;
+    color: $color;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px 0 $shadowColor;
+    transition: $transition;
+    font-size: 24px;
+    box-sizing: border-box;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $hoverBackgroundColor;
+    }
+
+    &:focus,
+    &:focus-visible {
+        outline: 2px solid $focusBorderColor;
+        outline-offset: 3px;
+    }
+}
+
+@mixin input($borderColor, $focusBorderColor) {
+    height: 35px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid $borderColor;
+    padding: 0px 15px;
+    margin: 10px 0px;
+
+    &:focus,
+    &:focus-visible {
+        outline: 2px solid $focusBorderColor;
+        outline-offset: 3px;
+    }
+}
