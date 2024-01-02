@@ -33,8 +33,13 @@ Users should be able to:
 - Toggle light and dark mode
 - **Bonus**: Drag and drop to reorder items on the list
 
+
 ### Demo
-<video src="./src/screenshots/todo-app-demo.mp4" alt="todo-app-demo" controls></video>
+
+![todo-app-demo-1](./src/screenshots/todo-app-demo-1.gif)
+![todo-app-demo-2](./src/screenshots/todo-app-demo-2.gif)
+![todo-app-demo-3](./src/screenshots/todo-app-demo-3.gif)
+![todo-app-demo-4](./src/screenshots/todo-app-demo-4.gif)
 
 ### Screenshot
 
